@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Back End Assessment</title>
+  </head>
+  <header>
+    <h1>Back End Assessment</h1>
+  </header>
+  <body class="container">
+    <section id="button-section">
+      <button id="complimentButton">Get a compliment</button>
+      <button id="fortuneButton">Get a fortune</button>
+    </section>
+    <section id="first-section">
+      <button id="favoriteClassButton">
+        Press to show my favorite Lost Ark class
+      </button>
+    </section>
+    <section id="second-section">
+      <form>
+        <label for="quote">Enter your favorite quote:</label>
+        <input type="text" id="quote" placeholder="Enter quote here..." />
+        <label for="author">Enter the author of the quote:</label>
+        <input
+          type="text"
+          id="author"
+          placeholder="Enter author of quote here..."
+        />
+        <button id="form-button">Submit</button>
+      </form>
+      <form>
+        <label for="quote">Enter your a quote to remove:</label>
+        <input type="text" id="quote" placeholder="Enter quote here..." />
+        <label for="author">Enter the author of the quote:</label>
+        <input
+          type="text"
+          id="author"
+          placeholder="Enter author of quote here..."
+        />
+        <button id="form-button">Remove</button>
+      </form>
+    </section>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
