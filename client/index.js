@@ -3,7 +3,7 @@ const fortuneButton = document.getElementById("fortuneButton");
 const favoriteClassButton = document.getElementById("favoriteClassButton");
 const firstSection = document.getElementById("first-section");
 const addQuoteButton = document.getElementById("form-button");
-const removeQuoteButton = document.getElementById("form-button");
+const removeQuoteButton = document.getElementById("index-button");
 
 const complimentClicker = () => {
   axios
@@ -71,23 +71,20 @@ const addQuoteHandler = (event) => {
 addQuoteButton.addEventListener("click", addQuoteHandler);
 
 const removeQuoteHandler = (event) => {
-    event.preventDefault();
-  
-    let quote = document.getElementById("quote");
-    let author = document.getElementById("author");
-  
-    let bodyObj = {
-      quote: quote.value,
-      author: author.value,
-    };
-  
-    axios
-      .delete("http://localhost:4000/api/quotes", bodyObj)
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((error) => console.log(error));
-  
-    quote.value = "";
-    author.value = "";
-  };
+  event.preventDefault();
+
+  let index = document.getElementById("index");
+  console.log(index.value);
+
+  axios
+    .delete(`http://localhost:4000/api/quotes/${index}`)
+    .then((res) => {
+      console.log(res.data);
+    })
+    .catch((error) => console.log(error));
+
+  quote.value = "";
+  author.value = "";
+};
+
+removeQuoteButton.addEventListener("click", removeQuoteHandler);

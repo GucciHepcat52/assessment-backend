@@ -11,6 +11,6 @@ app.get("/api/compliment", controller.getCompliment);
 app.get("/api/fortune", controller.getFortune);
 app.get("/api/favorite", controller.getFavoriteClass);
 app.post("/api/quotes", controller.createQuote);
-app.delete("/api/quotes", controller.deleteQuote);
+app.delete("/api/quotes/:id", controller.deleteQuote);
 
 app.listen(4000, () => console.log("Server running on 4000"));

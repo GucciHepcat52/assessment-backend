@@ -48,16 +48,8 @@ module.exports = {
     globalId++;
   },
   deleteQuote: (req, res) => {
-    for (let i = 0; i < quotes.length; i++) {
-      if (
-        quotes[i].quote === req.data.quote &&
-        quotes[i].author === req.data.author
-      ) {
-        delete quotes[i];
-      } else {
-        console.log("There is no quote currently here");
-      }
-    }
+    const index = quotes.findIndex((element) => element.id === +req.params.id);
+    quotes.splice(index, 1);
     res.status(200).send(quotes);
   },
 };
